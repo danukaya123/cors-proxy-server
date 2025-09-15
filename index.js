@@ -6,7 +6,7 @@ import fetch from 'node-fetch';
 const app = express();
 app.use(cors());
 
-async function fetchWithRetries(url, retries = 3, delay = 500) {
+async function fetchWithRetries(url, retries = 5, delay = 1000) {
     for (let i = 0; i < retries; i++) {
         try {
             const response = await fetch(url, {
